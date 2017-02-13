@@ -6,6 +6,7 @@
 package com.tomkoukoulis.supermarketoffers.model;
 
 import com.tomkoukoulis.supermarketoffers.controller.Rule;
+import java.math.BigDecimal;
 
 /**
  *
@@ -14,7 +15,7 @@ import com.tomkoukoulis.supermarketoffers.controller.Rule;
 public class Item {
     protected int id;
     protected String desciption;
-    protected float price;
+    protected BigDecimal price;
     protected Rule rule;
     
     public Item() {
@@ -23,7 +24,7 @@ public class Item {
     
     public Item(String description, float price) {
         this.desciption = description;
-        this.price = price;
+        this.price = BigDecimal.valueOf(price);
         id++;
     }
     
@@ -35,12 +36,12 @@ public class Item {
         this.desciption = desciption;
     }
 
-    public float getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     public void setPrice(float price) {
-        this.price = price;
+        this.price = BigDecimal.valueOf(price);
     }
 
     public Rule getRule() {

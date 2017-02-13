@@ -65,8 +65,8 @@ public class ReceiptTest {
      * Test of getListOfItems method, of class Receipt.
      */
     @Test
-    public void testGetListOfItem() {
-        System.out.println("getListOfItem");
+    public void testGetListOfItems() {
+        System.out.println("getListOfItems");
         Receipt receipt = new Receipt();
         receipt.addItem(listOfItems.get(0));
         receipt.addItem(listOfItems.get(1));
@@ -78,5 +78,22 @@ public class ReceiptTest {
         
         assertEquals(listOfItems, receipt.getListOfItems());
     }
-    
+
+    /**
+     * Test of getTotalPrice method, of class Receipt.
+     */
+    @Test
+    public void testGetTotalPrice() {
+        System.out.println("getTotalPrice");
+        Receipt receipt = new Receipt();
+        receipt.addItem(listOfItems.get(0));
+        receipt.addItem(listOfItems.get(1));
+        receipt.addItem(listOfItems.get(2));
+        receipt.addItem(listOfItems.get(3));
+        receipt.addItem(listOfItems.get(4));
+
+        float result = receipt.getTotalPrice();        
+        float expResult = 17.97F;
+        assertEquals(expResult, result, 0.001);
+    }
 }
