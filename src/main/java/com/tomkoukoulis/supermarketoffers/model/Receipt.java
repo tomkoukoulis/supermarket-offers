@@ -39,9 +39,15 @@ public class Receipt {
         BigDecimal totalPrice = BigDecimal.valueOf(0)
                 .setScale(2, RoundingMode.HALF_UP);
         for (Item item : listOfItems) {
+            if (item.hasRule()) {
+                item.getRule().calculateNewPrice();
+            }
+            
             totalPrice = totalPrice.add(item.getPrice());
         }
         
         return totalPrice.floatValue();
     }
+    
+    //check for pre-requisites for a rule
 }

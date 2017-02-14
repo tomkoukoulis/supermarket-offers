@@ -51,4 +51,8 @@ public class Item {
     public void setRule(Rule rule) {
         this.rule = rule;
     }
+    
+    public boolean hasRule() {
+        return (rule != null);
+    }
 }

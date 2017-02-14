@@ -5,6 +5,7 @@
  */
 package com.tomkoukoulis.supermarketoffers.model;
 
+import com.tomkoukoulis.supermarketoffers.AbstractTestClass;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,7 +18,7 @@ import static org.junit.Assert.*;
  *
  * @author tomkoukoulis
  */
-public class ReceiptTest {
+public class ReceiptTest extends AbstractTestClass {
     
     static ArrayList<Item> listOfItems;
             
@@ -26,12 +27,7 @@ public class ReceiptTest {
     
     @BeforeClass
     public static void setUpClass() {
-        listOfItems = new ArrayList<>();
-        listOfItems.add(new Item("Pizza Express Margherita 245g", 4.50f));
-        listOfItems.add(new Item("Real Olive Co Organic Kalamata 210g", 2.99f));
-        listOfItems.add(new Item("GU KEY LIME PIES 2x85g", 3.00f));
-        listOfItems.add(new Item("Free Range Chicken Drumsticks 412g", 5.79f));
-        listOfItems.add(new Item("Organic New Potatoes 500g", 1.69f));
+
     }
     
     @AfterClass
