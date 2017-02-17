@@ -14,14 +14,14 @@ import java.util.ArrayList;
  */
 public class AbstractTestClass {
     
-    public ArrayList<Item> listOfItems;
+    public ArrayList<Item> items;
     
     public AbstractTestClass() {
-        listOfItems = new ArrayList<>();
-        listOfItems.add(new Item("Pizza Express Margherita 245g", 4.50f));
-        listOfItems.add(new Item("Real Olive Co Organic Kalamata 210g", 2.99f));
-        listOfItems.add(new Item("GU KEY LIME PIES 2x85g", 3.00f));
-        listOfItems.add(new Item("Free Range Chicken Drumsticks 412g", 5.79f));
-        listOfItems.add(new Item("Organic New Potatoes 500g", 1.69f));
+        items = new ArrayList<>();
+        items.add(new Item("Pizza Express Margherita 245g", 4.50f));
+        items.add(new Item("Real Olive Co Organic Kalamata 210g", 2.99f));
+        items.add(new Item("GU KEY LIME PIES 2x85g", 3.00f));
+        items.add(new Item("Free Range Chicken Drumsticks 412g", 5.79f));
+        items.add(new Item("Organic New Potatoes 500g", 1.69f));
     }
 }
