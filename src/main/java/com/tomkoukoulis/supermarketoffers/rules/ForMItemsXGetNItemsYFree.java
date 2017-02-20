@@ -1,8 +1,8 @@
-package com.tomkoukoulis.supermarketoffers.controller.rules;
+package com.tomkoukoulis.supermarketoffers.rules;
 
-import com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException;
-import com.tomkoukoulis.supermarketoffers.model.Item;
-import com.tomkoukoulis.supermarketoffers.model.Receipt;
+import com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException;
+import com.tomkoukoulis.supermarketoffers.Item;
+import com.tomkoukoulis.supermarketoffers.Receipt;
 import java.util.ArrayList;
 
 /**

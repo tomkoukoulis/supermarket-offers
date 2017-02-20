@@ -1,8 +1,9 @@
-package com.tomkoukoulis.supermarketoffers.controller.rules;
+package com.tomkoukoulis.supermarketoffers.rules;
 
+import com.tomkoukoulis.supermarketoffers.rules.TwoForASpecialPrice;
 import com.tomkoukoulis.supermarketoffers.AbstractTest;
-import com.tomkoukoulis.supermarketoffers.model.Item;
-import com.tomkoukoulis.supermarketoffers.model.Receipt;
+import com.tomkoukoulis.supermarketoffers.Item;
+import com.tomkoukoulis.supermarketoffers.Receipt;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

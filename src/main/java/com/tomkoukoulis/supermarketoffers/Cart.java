@@ -1,4 +1,4 @@
-package com.tomkoukoulis.supermarketoffers.model;
+package com.tomkoukoulis.supermarketoffers;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,5 +1,7 @@
-package com.tomkoukoulis.supermarketoffers.model;
+package com.tomkoukoulis.supermarketoffers;
 
+import com.tomkoukoulis.supermarketoffers.Cart;
+import com.tomkoukoulis.supermarketoffers.Item;
 import com.tomkoukoulis.supermarketoffers.AbstractTest;
 import java.util.ArrayList;
 import java.util.Collection;

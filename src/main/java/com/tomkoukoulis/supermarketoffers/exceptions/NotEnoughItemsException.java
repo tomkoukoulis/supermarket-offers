@@ -1,4 +1,4 @@
-package com.tomkoukoulis.supermarketoffers.controller.exceptions;
+package com.tomkoukoulis.supermarketoffers.exceptions;
 
 /**
  *

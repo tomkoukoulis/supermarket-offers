@@ -1,6 +1,5 @@
 package com.tomkoukoulis.supermarketoffers;
 
-import com.tomkoukoulis.supermarketoffers.model.Item;
 import java.util.LinkedHashMap;
 
 /**

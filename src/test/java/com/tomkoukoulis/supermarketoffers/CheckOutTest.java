@@ -1,10 +1,11 @@
-package com.tomkoukoulis.supermarketoffers.controller;
+package com.tomkoukoulis.supermarketoffers;
 
+import com.tomkoukoulis.supermarketoffers.CheckOut;
 import com.tomkoukoulis.supermarketoffers.AbstractTest;
-import com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException;
-import com.tomkoukoulis.supermarketoffers.model.Cart;
-import com.tomkoukoulis.supermarketoffers.model.Item;
-import com.tomkoukoulis.supermarketoffers.model.Receipt;
+import com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException;
+import com.tomkoukoulis.supermarketoffers.Cart;
+import com.tomkoukoulis.supermarketoffers.Item;
+import com.tomkoukoulis.supermarketoffers.Receipt;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -23,7 +24,7 @@ public class CheckOutTest extends AbstractTest {
 
     /**
      * Test of checkOut method, of class CheckOut.
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * @throws com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException
      */
     @Test
     public void testCheckOut() throws NotEnoughItemsException {

@@ -1,5 +1,6 @@
-package com.tomkoukoulis.supermarketoffers.model;
+package com.tomkoukoulis.supermarketoffers;
 
+import com.tomkoukoulis.supermarketoffers.Item;
 import com.tomkoukoulis.supermarketoffers.AbstractTest;
 import org.junit.Test;
 import static org.junit.Assert.*;

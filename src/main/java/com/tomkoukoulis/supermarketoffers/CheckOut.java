@@ -1,9 +1,6 @@
-package com.tomkoukoulis.supermarketoffers.controller;
+package com.tomkoukoulis.supermarketoffers;
 
-import com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException;
-import com.tomkoukoulis.supermarketoffers.model.Cart;
-import com.tomkoukoulis.supermarketoffers.model.Item;
-import com.tomkoukoulis.supermarketoffers.model.Receipt;
+import com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException;
 
 /**
  *
@@ -25,7 +22,7 @@ public class CheckOut {
      * Constructor
      * 
      * @param cart
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException if the cart is empty
+     * @throws com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException if the cart is empty
      */
     public CheckOut(Cart cart) throws NotEnoughItemsException {
         if (cart.getItems().size() <= 0) {

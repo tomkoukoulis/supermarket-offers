@@ -1,8 +1,8 @@
-package com.tomkoukoulis.supermarketoffers.controller.rules;
+package com.tomkoukoulis.supermarketoffers.rules;
 
-import com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException;
-import com.tomkoukoulis.supermarketoffers.model.Item;
-import com.tomkoukoulis.supermarketoffers.model.Receipt;
+import com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException;
+import com.tomkoukoulis.supermarketoffers.Item;
+import com.tomkoukoulis.supermarketoffers.Receipt;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -32,7 +32,7 @@ public class BuyThreeCheapestIsFree implements Rule {
      * Constructor
      * 
      * @param setOfItems the set of items this offer applies to
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * @throws com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException
      */
     public BuyThreeCheapestIsFree(Set<Item> setOfItems) throws NotEnoughItemsException {
         if (setOfItems.size() < 3) {

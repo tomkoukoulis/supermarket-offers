@@ -1,6 +1,6 @@
-package com.tomkoukoulis.supermarketoffers.model;
+package com.tomkoukoulis.supermarketoffers;
 
-import com.tomkoukoulis.supermarketoffers.controller.rules.Rule;
+import com.tomkoukoulis.supermarketoffers.rules.Rule;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**

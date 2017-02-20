@@ -1,9 +1,10 @@
-package com.tomkoukoulis.supermarketoffers.controller.rules;
+package com.tomkoukoulis.supermarketoffers.rules;
 
+import com.tomkoukoulis.supermarketoffers.rules.BuyThreeCheapestIsFree;
 import com.tomkoukoulis.supermarketoffers.AbstractTest;
-import com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException;
-import com.tomkoukoulis.supermarketoffers.model.Item;
-import com.tomkoukoulis.supermarketoffers.model.Receipt;
+import com.tomkoukoulis.supermarketoffers.exceptions.NotEnoughItemsException;
+import com.tomkoukoulis.supermarketoffers.Item;
+import com.tomkoukoulis.supermarketoffers.Receipt;
 import java.util.HashSet;
 import org.junit.Test;
 import static org.junit.Assert.*;
