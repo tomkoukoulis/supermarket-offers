@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tomkoukoulis.supermarketoffers.model;
 
-import com.tomkoukoulis.supermarketoffers.AbstractTestClass;
+import com.tomkoukoulis.supermarketoffers.AbstractTest;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,25 +11,12 @@ import static org.junit.Assert.*;
  *
  * @author tomkoukoulis
  */
-public class CartTest extends AbstractTestClass {
+public class CartTest extends AbstractTest {
     
+    /**
+     * Constructor
+     */
     public CartTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
     }
 
     /**
@@ -45,16 +25,19 @@ public class CartTest extends AbstractTestClass {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Item item = items.get(0);
+        
+        Item pizza = testItems.get("Pizza Margherita");
         Cart cart = new Cart();
         
+        boolean result = cart.add(pizza);
         boolean expResult = true;
-        boolean result = cart.add(item);
+        
         assertEquals(expResult, result);
-
+        
         ArrayList<Item> expItems = cart.getItems();
+        
         assertTrue(expItems.size() == 1);
-        assertEquals(expItems.get(0), item);
+        assertEquals(expItems.get(0), pizza);
     }
 
     /**
@@ -63,11 +46,19 @@ public class CartTest extends AbstractTestClass {
     @Test
     public void testAddItems() {
         System.out.println("addItems");
+        
+        ArrayList<Item> items = new ArrayList(testItems.values());
 
         Cart cart = new Cart();
-        cart.addItems(items);
+        
+        boolean result = cart.addItems(items);
+        boolean expResult = true;
 
+        assertEquals(expResult, result);
+        
         ArrayList<Item> expItems = cart.getItems();
+        
+        assertTrue(expItems.size() == 5);
         assertEquals(expItems, items);
     }
 }
