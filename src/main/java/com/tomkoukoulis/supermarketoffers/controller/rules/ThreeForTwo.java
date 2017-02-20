@@ -28,15 +28,6 @@ public class ThreeForTwo implements Rule {
         this.item = item;
     }
     
-    /**
-     * Gets the offer item.
-     * 
-     * @return the offer item
-     */
-//    public Item getItem() {
-//        return this.item;
-//    }
-    
     @Override
     public Item addOffer() {
         return new Item("\tBuy 3 for 2", 0 - item.getPrice());

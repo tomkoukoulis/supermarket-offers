@@ -26,7 +26,7 @@ public class ItemTest extends AbstractTest {
         Item pizza = testItems.get("Pizza Margherita");
         Item chicken = testItems.get("Free Range Chicken");
         
-        int expResult = 1;
+        int expResult = -1;
         int result = pizza.compareTo(chicken);
         
         assertEquals(expResult, result);

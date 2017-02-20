@@ -21,13 +21,16 @@ public class ForMItemsXGetNItemsYFreeTest extends AbstractTest {
 
     /**
      * Test of addOffer method, of class ForMItemsXGetNItemsYFree.
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * 
+     * @throws NotEnoughItemsException
      */
     @Test
     public void testAddOffer() throws NotEnoughItemsException {
         System.out.println("addOffer");
 
-        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(testItems.get("Pizza Margherita"), 3, testItems.get("Organic Olives"), 2);
+        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(
+            testItems.get("Pizza Margherita"), 3, 
+            testItems.get("Organic Olives"), 2);
         
         Item expResult = new Item("\tGet 2 Free", -299);
         Item result = offer.addOffer();
@@ -38,13 +41,16 @@ public class ForMItemsXGetNItemsYFreeTest extends AbstractTest {
 
     /**
      * Test of checkPrerequisites method, of class ForMItemsXGetNItemsYFree.
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * 
+     * @throws NotEnoughItemsException
      */
     @Test
     public void testCheckPrerequisitesTrue() throws NotEnoughItemsException {
-        System.out.println("checkPrerequisites");
+        System.out.println("checkPrerequisites true");
         
-        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(testItems.get("Pizza Margherita"), 3, testItems.get("Organic Olives"), 2);
+        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(
+            testItems.get("Pizza Margherita"), 3, 
+            testItems.get("Organic Olives"), 2);
 
         Receipt receipt = new Receipt();
         receipt.add(testItems.get("Pizza Margherita"));
@@ -59,11 +65,12 @@ public class ForMItemsXGetNItemsYFreeTest extends AbstractTest {
     
     /**
      * Test of checkPrerequisites method, of class ForMItemsXGetNItemsYFree.
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * 
+     * @throws NotEnoughItemsException
      */
     @Test
     public void testCheckPrerequisitesTrueOddFreeItems() throws NotEnoughItemsException {
-        System.out.println("checkPrerequisites");
+        System.out.println("checkPrerequisites true odd free items");
         
         ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(testItems.get("Pizza Margherita"), 3, testItems.get("Organic Olives"), 2);
 
@@ -103,13 +110,16 @@ public class ForMItemsXGetNItemsYFreeTest extends AbstractTest {
     
     /**
      * Test of checkPrerequisites method, of class ForMItemsXGetNItemsYFree.
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * 
+     * @throws NotEnoughItemsException
      */
     @Test
     public void testCheckPrerequisitesFalseNoFreeItems() throws NotEnoughItemsException {
         System.out.println("checkPrerequisites");
         
-        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(testItems.get("Pizza Margherita"), 3, testItems.get("Organic Olives"), 2);
+        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(
+            testItems.get("Pizza Margherita"), 3, 
+            testItems.get("Organic Olives"), 2);
 
         Receipt receipt = new Receipt();
         receipt.add(testItems.get("Pizza Margherita"));
@@ -122,13 +132,16 @@ public class ForMItemsXGetNItemsYFreeTest extends AbstractTest {
     
     /**
      * Test of checkPrerequisites method, of class ForMItemsXGetNItemsYFree.
-     * @throws com.tomkoukoulis.supermarketoffers.controller.exceptions.NotEnoughItemsException
+     * 
+     * @throws NotEnoughItemsException
      */
     @Test
     public void testCheckPrerequisitesFalseNotEnoughQualifyingItems() throws NotEnoughItemsException {
         System.out.println("checkPrerequisites");
         
-        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(testItems.get("Pizza Margherita"), 3, testItems.get("Organic Olives"), 2);
+        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(
+            testItems.get("Pizza Margherita"), 3, 
+            testItems.get("Organic Olives"), 2);
 
         Receipt receipt = new Receipt();
         receipt.add(testItems.get("Pizza Margherita"));
@@ -138,5 +151,33 @@ public class ForMItemsXGetNItemsYFreeTest extends AbstractTest {
         
         boolean result = offer.checkPrerequisites(receipt);
         assertFalse(result);
+    }
+    
+    /**
+     * Test of constructor, of class ForMItemsXGetNItemsYFree.
+     * 
+     * @throws NotEnoughItemsException
+     */
+    @Test(expected = NotEnoughItemsException.class)
+    public void testConstructorThrowsException() throws NotEnoughItemsException {
+        System.out.println("constructor throws NotEnoughItemsException");
+        
+        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(
+            testItems.get("Pizza Margherita"), 0, 
+            testItems.get("Organic Olives"), 2);
+    }
+         
+    /**
+     * Test of constructor, of class ForMItemsXGetNItemsYFree.
+     *
+     * @throws NotEnoughItemsException
+     */
+    @Test(expected = NotEnoughItemsException.class)
+    public void testConstructorThrowsExceptionNotEnoughFreeItems() throws NotEnoughItemsException {
+        System.out.println("constructor throws NotEnoughItemsException");
+        
+        ForMItemsXGetNItemsYFree offer = new ForMItemsXGetNItemsYFree(
+            testItems.get("Pizza Margherita"), 3, 
+            testItems.get("Organic Olives"), 0);
     }
 }
