@@ -18,7 +18,7 @@ public class Item implements Comparable<Item> {
     /**
      * The description of the item
      */
-    protected String desciption;
+    protected String description;
 
     /**
      * The price of the item
@@ -40,7 +40,7 @@ public class Item implements Comparable<Item> {
      */
     public Item(String description, int price) {
         this.id = idProvider.incrementAndGet();
-        this.desciption = description;
+        this.description = description;
         this.price = price;
     }
     
@@ -49,17 +49,17 @@ public class Item implements Comparable<Item> {
      * 
      * @return The description of the item
      */
-    public String getDesciption() {
-        return desciption;
+    public String getDescription() {
+        return description;
     }
 
     /**
      * Sets the description of the item
      * 
-     * @param desciption The description of the item
+     * @param description The description of the item
      */
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
@@ -108,6 +108,7 @@ public class Item implements Comparable<Item> {
 
     @Override
     public int compareTo(Item item) {
-        return Integer.compare(item.getPrice(), this.price);
+        int cheaperThan = Integer.compare(this.price, item.getPrice());
+        return cheaperThan;
     }
 }

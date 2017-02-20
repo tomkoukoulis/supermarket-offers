@@ -10,9 +10,9 @@ import com.tomkoukoulis.supermarketoffers.model.Receipt;
 public interface Rule {
 
     /**
-     * Adds item to an offer
+     * Adds discount offer 
      * 
-     * @return the item that got on offer
+     * @return the discount to be applied to the receipt
      */
     public Item addOffer();
 
