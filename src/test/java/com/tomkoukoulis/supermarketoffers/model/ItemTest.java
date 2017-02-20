@@ -1,6 +1,6 @@
 package com.tomkoukoulis.supermarketoffers.model;
 
-import com.tomkoukoulis.supermarketoffers.AbstractTestClass;
+import com.tomkoukoulis.supermarketoffers.AbstractTest;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -8,8 +8,11 @@ import static org.junit.Assert.*;
  *
  * @author tomkoukoulis
  */
-public class ItemTest extends AbstractTestClass {
+public class ItemTest extends AbstractTest {
     
+    /**
+     * Constructor
+     */
     public ItemTest() {
     }
 
