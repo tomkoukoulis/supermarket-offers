@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tomkoukoulis.supermarketoffers.model;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -17,37 +11,71 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Receipt {
 
     private static final AtomicInteger idProvider = new AtomicInteger(0);
-    //offers
 
-    ArrayList<Item> listOfItems;
-    private final int id;
+    /**
+     * A list of the items on the receipt
+     */
+    protected ArrayList<Item> listOfItems;
 
-    Receipt() {
-        id = idProvider.incrementAndGet();
+    /**
+     * A unique id
+     */
+    protected final int id;
+
+    /**
+     * Constructor
+     */
+    public Receipt() {
+        this.id = idProvider.incrementAndGet();
         listOfItems = new ArrayList<>();
     }
 
-    public boolean addItem(Item item) {
+    /**
+     *
+     * @param item The item to be added
+     * @return true if items was added successfully to the receipt, false otherwise
+     */
+    public boolean add(Item item) {
         return listOfItems.add(item);
     }
 
+    /**
+     *
+     * @return The list of items on the receipt
+     */
     public ArrayList<Item> getListOfItems() {
         return listOfItems;
     }
 
+    /**
+     *
+     * @return The total price of the items on the receipt
+     */
     public float getTotalPrice() {
-        BigDecimal totalPrice = BigDecimal.valueOf(0)
-                .setScale(2, RoundingMode.HALF_UP);
-        for (Item item : listOfItems) {
-            if (item.hasRule()) {
-                item.getRule().calculateNewPrice();
-            }
-            
-            totalPrice = totalPrice.add(item.getPrice());
+        int totalPrice = 0;
+        
+        for (Item item : listOfItems) {            
+            totalPrice += item.getPrice();
         }
         
-        return totalPrice.floatValue();
+        return totalPrice/100f;
     }
     
-    //check for pre-requisites for a rule
+    /**
+     *
+     * @param item 
+     * @return the number of times the item appears on the receipt
+     */
+    public int getFrequency(Item item) {
+        return Collections.frequency(listOfItems, item);
+    }
+    
+    /**
+     *
+     * @param item
+     * @return true if the item is on the receipt, false otherwise
+     */
+    public boolean contains(Item item) {
+        return listOfItems.contains(item);
+    }
 }

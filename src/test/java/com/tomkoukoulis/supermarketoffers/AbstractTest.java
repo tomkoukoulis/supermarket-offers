@@ -1,7 +1,7 @@
 package com.tomkoukoulis.supermarketoffers;
 
 import com.tomkoukoulis.supermarketoffers.model.Item;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  *
@@ -12,13 +12,13 @@ public class AbstractTest {
     /**
      * A HashMap of a number of test items
      */
-    protected HashMap<String, Item> testItems;
+    protected LinkedHashMap<String, Item> testItems;
     
     /**
      * Constructor
      */
     public AbstractTest() {
-        testItems = new HashMap<>();
+        testItems = new LinkedHashMap<>();
         testItems.put("Pizza Margherita", new Item("Pizza Express Margherita 245g", 450));
         testItems.put("Organic Olives", new Item("Real Olive Co Organic Kalamata 210g", 299));
         testItems.put("Key Lime Pies", new Item("GU Key Lime Pies 2x85g", 300));
